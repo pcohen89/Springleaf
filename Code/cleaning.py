@@ -5,8 +5,8 @@ import pandas as pd
 import random
 
 ############################## Define macros #################################
-CLN_PATH = "C:/Repos/Springleaf/Data/Clean"
-RAW_PATH = "C:/Repos/Springleaf/Data/Raw"
+CLN_PATH = "C:/Repos/Springleaf/Data/Clean/"
+RAW_PATH = "C:/Repos/Springleaf/Data/Raw/"
 
 ############################## Define functions ##############################
 def random_csv_chunk(path, size):
@@ -16,7 +16,7 @@ def random_csv_chunk(path, size):
     :return: pandas df
     """
     # Count the lines
-    num_lines = sum(1 for l in open(f))
+    num_lines = sum(1 for l in open(path))
     # Sample size
     size = int(num_lines * size)
     # The row indices to skip - make sure 0 is not included to keep the header!
@@ -26,3 +26,5 @@ def random_csv_chunk(path, size):
     return df
 
 ################################ Execute Code ################################
+
+non_test = random_csv_chunk(RAW_PATH + "train.csv", .01)
