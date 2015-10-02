@@ -1,0 +1,20 @@
+######################################80#######################################################################
+## Logistic Regression using Stochastic Gradient Descent with adapted learning rate ##
+## Leaderboard score = 0.77355
+## Takes 2-3 minutes to run on my laptop
+#modified by kartik mehta
+## https://www.kaggle.com/kartikmehtaiitd
+
+# Giving due credit
+#classic tinrtgu's code
+# https://www.kaggle.com/c/avazu-ctr-prediction/forums/t/10927/beat-the-benchmark-with-less-than-1mb-of-memory
+#modified by rcarson available as FTRL starter on kaggle code
+#https://www.kaggle.com/jiweiliu/springleaf-marketing-response/ftrl-starter-code
+#############################################################################################################
+
+
+from datetime import datetime
+from csv import DictReader
+from math import exp, log, sqrt
+from random import random
+import pickle

@@ -15,13 +15,13 @@ def random_csv_chunk(path, size):
     :param size: decimal representing % of csv to take
     :return: pandas df
     """
-    # Count the lines
+    # Count the total lines in the file
     num_lines = sum(1 for l in open(path))
-    # Sample size
+    # Determine number of rows to keep
     size = int(num_lines * size)
     # The row indices to skip - make sure 0 is not included to keep the header!
     skip_idx = random.sample(range(1, num_lines), num_lines - size)
-    # Read the data
+    # Read in csv, skipping chosen rows
     df = pd.read_csv(path, skiprows=skip_idx)
     return df
 
